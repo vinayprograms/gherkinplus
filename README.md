@@ -4,7 +4,7 @@ A wrapper around cucumber's official gherkin [package](https://github.com/cucumb
 
 ## Purpose
 
-Certain tools use relationships between features and scenarios as a way to build decision graphs and other graph based analysis.
+Certain tools use relationships between features and scenarios as a way to build decision graphs and for other graph based analysis.
 
 ## Design
 
