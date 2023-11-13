@@ -1,6 +1,6 @@
 # Gherkin+
 
-A wrapper around cucumber's official gherkin [package](github.com/cucumber/gherkin-go/) to enable connections between multiple parts of a feature or across features. One such example - `ScenarioChainRule` is available under [graph](/graph/sample_rule.go) package.
+A wrapper around cucumber's official gherkin [package](https://github.com/cucumber/gherkin/tree/main/go) to enable connections between multiple parts of a feature or across features. One such example - `ScenarioChainRule` is available under [graph](/graph/sample_rule.go) package.
 
 ## Purpose
 
