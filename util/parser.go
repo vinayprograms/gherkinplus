@@ -1,4 +1,4 @@
-package loader
+package util
 
 import (
 	"strings"
@@ -28,9 +28,11 @@ func Load(dialect DialectProvider, content []string) ([]*messages.GherkinDocumen
 	return documents, nil
 }
 
-// Fix the following -
-// 1. Remove spaces around keywords and statements
-// 2. Replace 'And" statements with the keyword of previous statement
+////////////////////////////////////////
+// Internal functions
+
+// Remove spaces around keywords and statements;
+// Replace 'And" statements with the keyword of parent statement (Given, When or Then)
 func fixDocument(document *messages.GherkinDocument) {
 	// Remove spaces around keywords and statements
 	for _, child := range document.Feature.Children {

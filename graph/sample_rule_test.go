@@ -6,14 +6,14 @@ import (
 	"github.com/cucumber/gherkin-go/v19"
 	"github.com/cucumber/messages-go/v16"
 	"github.com/stretchr/testify/assert"
-	"github.com/vinayprograms/gherkinplus/loader"
+	"github.com/vinayprograms/gherkinplus/util"
 )
 
 // //////////////////////////////////////
 // Tests
 func TestScenarioChaining(t *testing.T) {
-	docs, err := loader.Load(
-		loader.NewDialectProvider("en", gherkin.GherkinDialectsBuildin().GetDialect("en")),
+	docs, err := util.Load(
+		util.NewDialect("en", gherkin.GherkinDialectsBuildin().GetDialect("en")),
 		[]string{
 			`
 			Feature: Sample feature

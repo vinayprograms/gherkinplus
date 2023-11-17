@@ -1,4 +1,4 @@
-package loader
+package util
 
 import (
 	"testing"
@@ -8,7 +8,7 @@ import (
 )
 
 func TestWithNullDialectAndEmptyContent(t *testing.T) {
-	dp := NewDialectProvider("adm", nil)
+	dp := NewDialect("adm", nil)
 	docs, err := Load(dp, []string{})
 
 	assert.Equal(t, nil, err)
@@ -36,7 +36,7 @@ func TestWithEmptyContent(t *testing.T) {
 			"but":      {"But"},
 		},
 	}
-	dp := NewDialectProvider("adm", &dialect)
+	dp := NewDialect("adm", &dialect)
 	docs, err := Load(dp, []string{})
 
 	assert.Equal(t, nil, err)
@@ -73,7 +73,7 @@ func TestWithSimpleADMContent(t *testing.T) {
 				When the attack step is successful
 				Then monitoring folks are notified
 	`
-	dp := NewDialectProvider("adm", &dialect)
+	dp := NewDialect("adm", &dialect)
 	docs, err := Load(dp, []string{adm})
 
 	assert.Equal(t, nil, err)
@@ -117,7 +117,7 @@ func TestWithWrongDialect(t *testing.T) {
 				When the attack step is successful
 				Then monitoring folks are notified
 	`
-	dp := NewDialectProvider("none", &dialect)
+	dp := NewDialect("none", &dialect)
 	docs, err := Load(dp, []string{adm})
 
 	assert.NotNil(t, err)
@@ -163,7 +163,7 @@ func TestWithComplexADMContent(t *testing.T) {
 					When monitoring folks are notified
 					Then Company is fully defended
 	`
-	dp := NewDialectProvider("adm", &dialect)
+	dp := NewDialect("adm", &dialect)
 	docs, err := Load(dp, []string{adm})
 
 	assert.Equal(t, nil, err)

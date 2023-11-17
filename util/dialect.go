@@ -1,4 +1,4 @@
-package loader
+package util
 
 import (
 	"github.com/cucumber/gherkin-go/v19"
@@ -9,7 +9,7 @@ type DialectProvider struct {
 	Dialect *gherkin.GherkinDialect
 }
 
-func NewDialectProvider(name string, dialect *gherkin.GherkinDialect) DialectProvider {
+func NewDialect(name string, dialect *gherkin.GherkinDialect) DialectProvider {
 	return DialectProvider{
 		Name:    name,
 		Dialect: dialect,
